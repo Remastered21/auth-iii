@@ -20,7 +20,7 @@ export default class SignIn extends Component {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/login", this.state)
+      .post("http://localhost:5000/api/login", this.state)
       .then(response => {
         localStorage.setItem("token", response.data.token);
 
