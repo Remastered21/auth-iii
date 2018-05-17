@@ -29,7 +29,6 @@ export default class Users extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
         {this.state.users.map(eachUser => (

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class SignIn extends Component {
+export default class SignUp extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,21 +20,21 @@ export default class SignIn extends Component {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/login", this.state)
+      .post("http://localhost:5000/api/register", this.state)
       .then(response => {
-        localStorage.setItem("token", response.data.token);
-
-        this.props.history.push("/users");
+        
+        this.props.history.push("/signin");
       })
       .catch(err => {
-        <h1>Wrong</h1>, localStorage.removeItem("token");
+
+        this.props.history.push("/signin");
       });
   };
 
   render() {
     return (
       <div>
-        <h1>Sign in</h1>
+        <h1>Create new Account</h1>
         <form onSubmit={this.submitHandler}>
           <div>
             <input
