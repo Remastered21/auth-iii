@@ -27,7 +27,7 @@ export default class SignIn extends Component {
         this.props.history.push("/users");
       })
       .catch(err => {
-        <h1>Wrong</h1>, localStorage.removeItem("token");
+        localStorage.removeItem("token");
       });
   };
 
