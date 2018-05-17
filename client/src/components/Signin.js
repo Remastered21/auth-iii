@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 export default class SignIn extends Component {
   constructor() {
@@ -50,7 +50,9 @@ export default class SignIn extends Component {
             type="text"
           />
         </div>
-        <button>Sign in</button>
+        <div>
+          <button>Sign in</button>
+        </div>
       </form>
     );
   }

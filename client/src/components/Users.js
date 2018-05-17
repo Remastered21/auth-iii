@@ -11,7 +11,7 @@ export default class Users extends Component {
 
   componentDidMount = () => {
     const token = localStorage.getItem("token");
-    const authToken = "$(token)";
+    const authToken = `${token}`;
     const requestOption = {
       headers: {
         Authorization: authToken
@@ -24,7 +24,7 @@ export default class Users extends Component {
         this.setState({ users: response.data });
       })
       .catch(err => {
-        this.props.history.push;
+        this.props.history.push("/signin");
       });
   };
 
@@ -32,9 +32,9 @@ export default class Users extends Component {
     console.log(this.state);
     return (
       <div>
-        {this.state.users.map(eachUser => {
-          <div key={eachUser._id}>{eachUser.username}</div>;
-        })}
+        {this.state.users.map(eachUser => (
+          <div key={eachUser._id}>{eachUser.username}</div>
+        ))}
       </div>
     );
   }

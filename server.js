@@ -62,7 +62,7 @@ server.post("/api/register", (req, res) => {
     res.json({ token });
   });
 });
-
+// just so that I don't have to login every time
 server.get("/api/bypass", (req, res) => {
   User.find()
     .then(users => {
