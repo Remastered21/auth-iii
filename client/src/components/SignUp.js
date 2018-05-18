@@ -53,7 +53,7 @@ export default class SignUp extends Component {
             />
           </div>
           <div>
-            <button>Sign in</button>
+            <button>Create Account</button>
           </div>
         </form>
       </div>
