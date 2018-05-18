@@ -6,7 +6,8 @@ export default class SignIn extends Component {
     super();
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      isWrongCred: false
     };
   }
 
@@ -28,6 +29,7 @@ export default class SignIn extends Component {
       })
       .catch(err => {
         localStorage.removeItem("token");
+        this.setState({ isWrongCred: true });
       });
   };
 
@@ -54,6 +56,13 @@ export default class SignIn extends Component {
           </div>
           <div>
             <button>Sign in</button>
+            <br />
+            <br />
+            <div>
+              {this.state.isWrongCred
+                ? "Your username/password was incorrect."
+                : null}
+            </div>
           </div>
         </form>
       </div>
